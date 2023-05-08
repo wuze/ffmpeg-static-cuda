@@ -103,15 +103,7 @@ RUN \
     ./configure --enable-static --disable-shared && \
     make -j$(nproc) && make install
 
-ARG LIBASS_VERSION=0.17.1
-ARG LIBASS_URL="https://github.com/libass/libass/releases/download/$LIBASS_VERSION/libass-$LIBASS_VERSION.tar.gz"
-ARG LIBASS_SHA256=d653be97198a0543c69111122173c41a99e0b91426f9e17f06a858982c2fb03d
-RUN \
-    wget $WGET_OPTS -O libass.tar.gz "$LIBASS_URL" && \
-    echo "$LIBASS_SHA256  libass.tar.gz" | sha256sum --status -c - && \
-    tar xf libass.tar.gz && \
-    cd libass-* && ./configure --disable-shared --enable-static && \
-    make -j$(nproc) && make install
+
 
 ARG LIBBLURAY_VERSION=1.3.4
 ARG LIBBLURAY_URL="https://code.videolan.org/videolan/libbluray/-/archive/$LIBBLURAY_VERSION/libbluray-$LIBBLURAY_VERSION.tar.gz"
@@ -596,6 +588,16 @@ RUN \
     tar xf lcms2.tar.gz && \
     cd lcms2-* && ./configure && make && \
     make -j$(nproc) install
+    
+ARG LIBASS_VERSION=0.17.1
+ARG LIBASS_URL="https://github.com/libass/libass/releases/download/$LIBASS_VERSION/libass-$LIBASS_VERSION.tar.gz"
+ARG LIBASS_SHA256=d653be97198a0543c69111122173c41a99e0b91426f9e17f06a858982c2fb03d
+RUN \
+    wget $WGET_OPTS -O libass.tar.gz "$LIBASS_URL" && \
+    echo "$LIBASS_SHA256  libass.tar.gz" | sha256sum --status -c - && \
+    tar xf libass.tar.gz && \
+    cd libass-* && ./configure --disable-shared --enable-static && \
+    make -j$(nproc) && make install
 
 
 ARG FFMPEG_VERSION=5.1
