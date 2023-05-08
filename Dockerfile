@@ -600,6 +600,9 @@ RUN \
     make -j$(nproc) && make install
 
 
+##    --enable-libbluray \
+##    --enable-libass \
+
 ARG FFMPEG_VERSION=5.1
 ARG FFMPEG_URL="https://ffmpeg.org/releases/ffmpeg-$FFMPEG_VERSION.tar.bz2"
 ARG FFMPEG_SHA256=32b56fb01ce90d452958ae25e91c9564abf49ed5453c127bec23c63e530aa8fa
@@ -636,7 +639,7 @@ RUN \
     --enable-lcms2 \
     --enable-libaom \
     --enable-libaribb24 \
-    --enable-libbluray \
+
     --enable-libdav1d \
     --enable-libdavs2 \
     --enable-libfdk-aac \
