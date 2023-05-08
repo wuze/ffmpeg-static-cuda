@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: ffmpeg-static-cuda-fuck
 
 on:
   push:
