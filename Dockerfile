@@ -602,6 +602,7 @@ RUN \
 
 ##    --enable-libbluray \
 ##    --enable-libass \
+##    --enable-libgme \
 
 ARG FFMPEG_VERSION=5.1
 ARG FFMPEG_URL="https://ffmpeg.org/releases/ffmpeg-$FFMPEG_VERSION.tar.bz2"
@@ -645,7 +646,7 @@ RUN \
     --enable-libfdk-aac \
     --enable-libfreetype \
     --enable-libfribidi \
-    --enable-libgme \
+
     --enable-libgsm \
     --enable-libkvazaar \
     --enable-libmodplug \
