@@ -636,7 +636,6 @@ RUN \
     --enable-lcms2 \
     --enable-libaom \
     --enable-libaribb24 \
-    --enable-libass \
     --enable-libbluray \
     --enable-libdav1d \
     --enable-libdavs2 \
